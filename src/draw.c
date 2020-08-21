@@ -6,7 +6,7 @@
 /*   By: yalona <yalona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 18:59:12 by yalona            #+#    #+#             */
-/*   Updated: 2020/08/21 15:32:04 by yalona           ###   ########.fr       */
+/*   Updated: 2020/08/21 21:03:39 by yalona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ void	bfr_pix(t_fractol *fractol)
 		pix_to_img(fractol, 0);
 	else
 	{
-		if (fractol->id_frac == 4)
-			pix_to_img(fractol, (fractol->i * 900000));
-		else
-			pix_to_img(fractol, (fractol->i * 1100000));
+		if (fractol->id_frac == 1)
+			pix_to_img(fractol, (fractol->i * 2000000));
+		else if (fractol->id_frac == 2)
+			pix_to_img(fractol, (fractol->i * 1500000));
+		else if (fractol->id_frac == 3)
+			pix_to_img(fractol, (fractol->i * 1200000));
 	}
 }
 

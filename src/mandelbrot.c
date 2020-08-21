@@ -6,25 +6,26 @@
 /*   By: yalona <yalona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 13:55:37 by yalona            #+#    #+#             */
-/*   Updated: 2020/08/21 18:31:03 by yalona           ###   ########.fr       */
+/*   Updated: 2020/08/21 21:07:24 by yalona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Includes/fractol.h"
 
-void exten_mandelbrot(t_fractol *fractol)
+void	exten_mandelbrot(t_fractol *fractol)
 {
-	while (fractol->z_r * fractol->z_r + fractol->z_i * fractol->z_i < 4 
-		&& fractol->i < fractol->iter_max)
+	while (fractol->z_r * fractol->z_r + fractol->z_i * fractol->z_i < 4
+			&& fractol->i < fractol->iter_max)
 	{
 		fractol->tmp = fractol->z_r;
 		fractol->z_r = fractol->z_r * fractol->z_r - fractol->z_i
-			 * fractol->z_i + fractol->c_r;
+			* fractol->z_i + fractol->c_r;
 		fractol->z_i = 2 * fractol->z_i * fractol->tmp + fractol->c_i;
 		fractol->i++;
 	}
 }
-void init_mandelbrot(t_fractol *fractol)
+
+void	init_mandelbrot(t_fractol *fractol)
 {
 	fractol->width = 1600;
 	fractol->height = 1000;
@@ -39,7 +40,6 @@ void init_mandelbrot(t_fractol *fractol)
 	fractol->zoom = 150;
 	fractol->id_frac = 2;
 }
-
 
 void	draw_mandelbrot(t_fractol *fractol)
 {
