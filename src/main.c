@@ -6,7 +6,7 @@
 /*   By: yalona <yalona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 15:55:53 by yalona            #+#    #+#             */
-/*   Updated: 2020/08/21 18:39:13 by yalona           ###   ########.fr       */
+/*   Updated: 2020/08/21 19:23:44 by yalona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void lounch_draw(t_fractol *fractol)
 
 void    ft_map(t_fractol *fractol)
 {
-    fractol->mlx = mlx_init;
+    fractol->mlx = mlx_init();
     fractol->win = mlx_new_window(fractol->mlx, fractol->width, 
         fractol->height, "FRACTOL");
     fractol->imgptr = mlx_new_image(fractol->mlx, fractol->width, fractol->height);
