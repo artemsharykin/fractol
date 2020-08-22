@@ -6,7 +6,7 @@
 #    By: yalona <yalona@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/21 17:40:07 by yalona            #+#    #+#              #
-#    Updated: 2020/08/21 18:16:10 by yalona           ###   ########.fr        #
+#    Updated: 2020/08/22 17:05:37 by yalona           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(HEA)
 					@make -C libft/
 					@$(CC) $(CFLAGS) $(OBJ) $(GFLAGS) libft/libft.a -o $(NAME)
-					@echo "Fractol  complete."
+					@echo "Fractol  OK."
 
 %.o: 			%.c $(HEA)
 					@$(CC) $(CFLAGS) -c $< -o $@
@@ -48,7 +48,7 @@ clean:
 fclean: 			clean
 					@make -C libft fclean
 					@rm -rf $(NAME)
-					@echo "Executable deleted."
+					@echo "__DELETED__"
 
 re: 				fclean all
 

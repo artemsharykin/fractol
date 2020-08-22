@@ -6,7 +6,7 @@
 #    By: yalona <yalona@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/19 19:08:20 by yalona            #+#    #+#              #
-#    Updated: 2020/08/21 18:01:21 by yalona           ###   ########.fr        #
+#    Updated: 2020/08/22 13:51:26 by yalona           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 		@ar rc $(NAME) $(OBJ)
 		@ranlib $(NAME)
-		@echo "Libft complete."
+		@echo "Libft OK."
 
 %.o: %.c
 		@gcc $(CFLAGS) $< -c -o $@

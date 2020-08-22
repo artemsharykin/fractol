@@ -6,7 +6,7 @@
 /*   By: yalona <yalona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/16 17:20:00 by yalona            #+#    #+#             */
-/*   Updated: 2020/08/21 20:55:44 by yalona           ###   ########.fr       */
+/*   Updated: 2020/08/22 17:28:23 by yalona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int	mouse_julia(int x, int y, t_fractol *fractol)
 		if (x < fractol->width && y < fractol->height)
 		{
 			if (x < fractol->width / 2 && y < fractol->height / 2)
-				fractol->c_r += 0.004;
+				fractol->c_r += 0.05;
 			if (x > fractol->width / 2 && y < fractol->height / 2)
-				fractol->c_r -= 0.004;
+				fractol->c_r -= 0.05;
 			if (x < fractol->width / 2 && y > fractol->height / 2)
-				fractol->c_i += 0.004;
+				fractol->c_i += 0.05;
 			if (x > fractol->width / 2 && y > fractol->height / 2)
-				fractol->c_i += 0.004;
+				fractol->c_i -= 0.05;
 		}
 		draw_julia(fractol);
 	}

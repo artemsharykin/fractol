@@ -6,7 +6,7 @@
 /*   By: yalona <yalona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/11 15:55:53 by yalona            #+#    #+#             */
-/*   Updated: 2020/08/21 21:02:16 by yalona           ###   ########.fr       */
+/*   Updated: 2020/08/22 17:33:29 by yalona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_map(t_fractol *fractol)
 	lounch_draw(fractol);
 	mlx_key_hook(fractol->win, keys, fractol);
 	if (fractol->id_frac == 1)
-		mlx_hook(fractol->win, 6, 1L, mouse_julia, fractol);
+		mlx_hook(fractol->win, 6, 0, mouse_julia, fractol);
 	mlx_mouse_hook(fractol->win, mouse_press, fractol);
 	mlx_hook(fractol->win, 17, 0, exit_cl, NULL);
 	mlx_loop(fractol->mlx);
@@ -66,10 +66,12 @@ int		inst_fractol(t_fractol *fractol, char *name)
 
 int		main(int ac, char **av)
 {
-	t_fractol fractol;
+	t_fractol *fractol;
 
-	if ((ac != 2) || inst_fractol(&fractol, av[1]) == 0)
+	if (!(fractol = (t_fractol *)ft_memalloc(sizeof(t_fractol))))
+		exit(0);
+	if ((ac != 2) || inst_fractol(fractol, av[1]) == 0)
 		return (usage());
-	ft_map(&fractol);
+	ft_map(fractol);
 	return (0);
 }

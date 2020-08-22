@@ -6,7 +6,7 @@
 /*   By: yalona <yalona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/21 14:23:11 by yalona            #+#    #+#             */
-/*   Updated: 2020/08/21 21:11:24 by yalona           ###   ########.fr       */
+/*   Updated: 2020/08/22 17:22:51 by yalona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	init_burningship(t_fractol *fractol)
 	fractol->y2 = 3;
 	fractol->iter_max = 19;
 	fractol->zoom = 150;
-	fractol->id_frac = 4;
+	fractol->id_frac = 3;
 }
 
 void	exten_burninship(t_fractol *fractol)
